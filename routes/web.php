@@ -28,6 +28,7 @@ Route::get('user/info','TestController@userInfo');
 Route::get('goods/show','GoodsController@show');//商品详情
 Route::get('test/enc','TestController@enc');//加密
 Route::get('test/dec','TestController@dec');//解api传过来的值
+Route::get('test/header','TestController@headers');//header传输测试
 
 
 

@@ -107,10 +107,25 @@ class TestController extends Controller
         openssl_public_decrypt($b64_info,$decrypted,$keys);
         echo $decrypted;
     }
-    //测试签名
-    public function signature(){
-        //设置签名
-
+    /*
+     * headers传参测试
+     * */
+    public function headers(){
+        //设置参数
+        $uid=12345;
+        $token=Str::random(12);
+        $url="api.1911api.com/test/header";
+        $header1=[
+            'uid:'.$uid,
+            'token:'.$token,
+        ];
+        //curl
+        $ch=curl_init();
+        curl_setopt($ch,CURLOPT_URL,$url);
+        curl_setopt($ch,CURLOPT_HTTPHEADER,$header1);
+        $output=curl_exec($ch);
+        curl_close($ch);
+        dd($output);
     }
 
 
