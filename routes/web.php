@@ -22,8 +22,9 @@ Route::get('/wx/curl','TestController@getCurltoken');
 Route::get('/wx/guzzle','TestController@getGuzzleToken');
 Route::get('access','TestController@getapitoken');
 Route::get('userinfo','TestController@userInfo');
-Route::post('login','TestController@login');
-Route::post('sign','TestController@sign');
+Route::get('login','LoginController@login');//登录
+Route::post('loginDo','LoginController@loginDo');//确认登录
+Route::post('sign','TestController@sign');//注册
 Route::get('user/info','TestController@userInfo');
 Route::get('goods/show','GoodsController@show');//商品详情
 Route::get('test/enc','TestController@enc');//加密
