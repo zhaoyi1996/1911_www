@@ -37,6 +37,7 @@
     </div>
 </div>
 <!-- end navbar top -->
+
 <!-- side nav right-->
 <div class="side-nav-panel-right">
     <ul id="slide-out-right" class="side-nav side-nav-panel collapsible">
@@ -363,33 +364,32 @@
 <!-- end cart menu -->
 
 
-<!-- login -->
+<!-- register -->
 <div class="pages section">
     <div class="container">
         <div class="pages-head">
-            <h3>LOGIN</h3>
+            <h3>REGISTER</h3>
         </div>
-        <div class="login">
+        <div class="register">
             <div class="row">
-                <form action="{{url('/loginDo')}}" method="post">
-                    @csrf
-                    <div>
-                        <span style="color:red;">{{session('msg')}}</span>
+                <form action="{{url('regDo')}}" method="post" class="col s12">
+                    <div class="input-field">
+                        <input type="text" class="validate" placeholder="NAME" required>
                     </div>
                     <div class="input-field">
-                        <input type="text" name="user_name" class="validate" placeholder="USERNAME" required>
+                        <input type="email" placeholder="EMAIL" class="validate" required>
                     </div>
                     <div class="input-field">
-                        <input type="password" name="user_pwd" class="validate" placeholder="PASSWORD" required>
+                        <input type="password" placeholder="PASSWORD" class="validate" required>
                     </div>
-                    <a href=""><h6>Forgot Password ?</h6></a>
-                    <input type="submit" class="btn button-default" value="LOGIN">
+                    <div ><input type="submit" class="btn button-default" value="REGISTER"></div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<!-- end login -->
+<!-- end register -->
+
 
 <!-- loader -->
 <div id="fakeLoader"></div>

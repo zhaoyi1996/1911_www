@@ -24,7 +24,8 @@ Route::get('access','TestController@getapitoken');
 Route::get('userinfo','TestController@userInfo');
 Route::get('login','LoginController@login');//登录
 Route::post('loginDo','LoginController@loginDo');//确认登录
-Route::post('sign','TestController@sign');//注册
+Route::get('reg','LoginController@register');//注册
+Route::post('regDo','LoginController@registerDo');//确认注册
 Route::get('user/info','TestController@userInfo');
 Route::get('goods/show','GoodsController@show');//商品详情
 Route::get('test/enc','TestController@enc');//加密
