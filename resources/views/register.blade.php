@@ -373,14 +373,18 @@
         <div class="register">
             <div class="row">
                 <form action="{{url('regDo')}}" method="post" class="col s12">
+                    <div>
+                        <span style="color:red;">{{session('msg')}}</span>
+                    </div>
+                    @csrf
                     <div class="input-field">
-                        <input type="text" class="validate" placeholder="NAME" required>
+                        <input type="text" name="user_name" class="validate" placeholder="NAME" required>
                     </div>
                     <div class="input-field">
-                        <input type="email" placeholder="EMAIL" class="validate" required>
+                        <input type="email" name="user_email" placeholder="EMAIL" class="validate" required>
                     </div>
                     <div class="input-field">
-                        <input type="password" placeholder="PASSWORD" class="validate" required>
+                        <input type="password" name="user_pwd" placeholder="PASSWORD" class="validate" required>
                     </div>
                     <div ><input type="submit" class="btn button-default" value="REGISTER"></div>
                 </form>
