@@ -13,6 +13,7 @@ class LoginController extends Controller
     public function register(){
         return view('register');
     }
+
     /*
      * 注册-确认注册
      * */
@@ -52,10 +53,11 @@ class LoginController extends Controller
         $res=$response->getBody();
         $res=json_decode($res,true);
         if($res['errno']===0){
-            //将获取到的信息存入redis
-            Redis::hmset($res['data']['key_id'],$res['data']);
-            $abc=Redis::hgetall($res['data']['key_id']);
-            dd($abc);
+            $userLogin=Redis::hgetall($res['data']['key_id']);
+            if(empty($userLogin)){
+                //将获取到的信息存入redis
+                Redis::hmset($res['data']['key_id'],$res['data']);
+            }
             return redirect('goods/index');
         }else{
             return back()->with(['msg'=>$res['data']['error']]);

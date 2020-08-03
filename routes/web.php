@@ -31,6 +31,11 @@ Route::get('goods/show','GoodsController@show');//商品详情
 Route::get('test/enc','TestController@enc');//加密
 Route::get('test/dec','TestController@dec');//解api传过来的值
 Route::get('test/header','TestController@headers');//header传输测试
+Route::get('aouth/github','AouthController@github');//github登录回调
+Route::get('aouth/getgithub','AouthController@getgithub');//github登录
+
+
+
 
 
 
